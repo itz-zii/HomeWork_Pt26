@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        height: auto;
+        justify-content: center;
+        margin: 25%;
+    }
+    .menu {
+        list-style-type: none;
+        background-color: rgb(65, 65, 65);
+        width: 250px;
+        height: auto;
+        color: white;
+    }
+    .menu li {
+        padding: 10px;
+        border-bottom: 2px solid white;
+        cursor: pointer;
+    }
+
+    .menu li:active ul {
+        display: block;
+        background-color: green;
+    }
+
+    .menu li ul {
+        display: none;
+    }
+    .menu li.has-child::after {
+        content:"▼";
+        margin-left: 160px;
+    }
+    ul {
+        list-style-type: none;
+    }
+</style>
+<body>
+    <ul class="menu">
+        <li>Menu 1</li>
+        <li class="has-child active">Menu 2
+            <ul>
+                <li>Menu 2.1</li>
+                <li>Menu 2.2</li>
+                <li>Menu 2.3</li>
+                <li>Menu 2.4</li>
+            </ul>
+        </li>
+        <li>Menu 3</li>
+        <li class="has-child active">Menu 4
+            <ul>
+                <li>Menu 4.1</li>
+                <li>Menu 4.2</li>
+                <li>Menu 4.3</li>
+                <li>Menu 4.4</li>
+            </ul>
+        </li>
+        <li>Menu 5</li>
+    </ul>
+</body>
+</html>
